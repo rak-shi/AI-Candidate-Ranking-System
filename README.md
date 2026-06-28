@@ -35,46 +35,35 @@ An `ExplanationGenerator` then converts the raw scores and matched signals into 
 ---
 
 ## 📁 Project Structure
+
+```text
 AI-Candidate-Ranking-System/
-
-├── main.py                      # Entry point — loads data, runs ranking, writes output.csv
-
-├── check_dataset.py             # Quick utility to inspect a sample candidate record
-
+│
+├── main.py                    # Entry point - loads data, ranks candidates, writes output.csv
+├── check_dataset.py           # Utility to inspect sample candidate records
 ├── requirements.txt
-
+├── README.md
+├── output.csv
+│
 ├── data/
-
-   ├── candidates.jsonl         # Candidate profiles (JSON Lines)
-
-│   └── job_description.docx     # Job description to rank candidates against
-
+│   ├── job_description.docx   # Job description
+│   └── candidates.jsonl       # Candidate dataset (not uploaded to GitHub)
+│
 ├── ranking/
-
-│   ├── bm25_ranker.py           # BM25 lexical ranking
-
-│   ├── embedding_ranker.py      # Sentence-Transformer semantic similarity ranking
-
-│   ├── hybrid_ranker.py         # Combines BM25 + embeddings + rule-based signals
-
-│   └── explanation.py           # Generates human-readable explanations for each rank
-
+│   ├── bm25_ranker.py         # BM25 lexical ranking
+│   ├── embedding_ranker.py    # Sentence Transformer semantic similarity
+│   ├── hybrid_ranker.py       # Hybrid ranking algorithm
+│   └── explanation.py         # Explainable ranking
+│
 ├── utils/
-
-│   ├── loader.py                # Loads candidate JSONL data
-
-│   ├── preprocess.py            # Text cleaning utilities
-
-│   ├── create_embeddings.py     # Standalone script to (re)generate candidate embeddings
-
-│   └── logger.py                # Logging configuration
-
-├── processed/
-
-│   └── embeddings.pkl           # Cached candidate embeddings (auto-generated)
-
-└── output.csv                   # Final ranked candidates with explanations
----
+│   ├── loader.py              # Dataset loader
+│   ├── preprocess.py          # Text preprocessing
+│   ├── create_embeddings.py   # Generate candidate embeddings
+│   └── logger.py              # Logging utilities
+│
+└── processed/
+    └── embeddings.pkl         # Generated candidate embeddings (not uploaded)
+```
 
 ## 🚀 Getting Started
 
