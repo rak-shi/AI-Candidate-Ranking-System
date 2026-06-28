@@ -1,4 +1,10 @@
+
 # AI Candidate Ranking System
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![SentenceTransformers](https://img.shields.io/badge/Sentence--Transformers-NLP-green)
+![BM25](https://img.shields.io/badge/BM25-Ranking-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 An AI-powered candidate ranking system that scores and ranks resumes/candidate profiles against a job description using a **hybrid retrieval approach** — combining **BM25 lexical matching**, **Sentence-Transformer semantic embeddings**, and **rule-based scoring signals** (skills, experience, education) — with **explainable AI** output for every ranked candidate.
 
