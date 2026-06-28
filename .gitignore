@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+processed/
+data/candidates.jsonl
+.vscode/
+.env
