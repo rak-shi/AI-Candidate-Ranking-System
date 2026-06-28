@@ -132,13 +132,41 @@ python check_dataset.py
 
 ---
 
-## 📦 Output
+# 📦 Output
 
-`output.csv` contains the final ranked candidates:
+The system generates an **`output.csv`** file containing the final ranked candidates along with their scores and explainable ranking details.
 
-| rank | candidate_id | name | score | explanation |
-|---|---|---|---|---|
-| 1 | CAND_0088025 | Amit Arora | 0.7646 | Matched skills: ... \| Worked as ... \| Ph.D from ... \| Semantic similarity score: ... \| BM25 relevance score: ... \| Overall ranking score: ... |
+## Sample Output
+
+| Rank | Candidate ID | Name | Score | Top Matched Skills | Education |
+|:---:|:------------:|:----|:-----:|:-------------------|:----------|
+| **1** | CAND_0088025 | Amit Arora | **0.7646** | Pinecone, QLoRA, LLMs, RAG, LoRA, BM25 | Ph.D. from COEP Pune |
+| **2** | CAND_0011687 | Shreya Tiwari | **0.7575** | OpenSearch, FAISS, PEFT, Embeddings, LangChain, Weaviate | Ph.D. from IIT Delhi |
+| **3** | CAND_0039754 | Mira Banerjee | **0.7478** | Qdrant, NLP, OpenSearch, LLMs, BM25, Weaviate | M.Sc. from IIT Hyderabad |
+| **4** | CAND_0080766 | Kiara Mittal | **0.7384** | LoRA, Search Infrastructure, Elasticsearch, Computer Vision, QLoRA, OpenSearch | M.Sc. from RV College of Engineering |
+| **5** | CAND_0068351 | Aadhya Iyer | **0.7215** | Qdrant, Elasticsearch, PEFT, Python, Ranking Systems, LoRA | M.E. from IIIT Bangalore |
+
+### Example Explanation
+
+Each candidate includes an explainable recommendation describing why the candidate received the final ranking.
+
+```text
+Matched Skills:
+Pinecone, QLoRA, LLMs, RAG, LoRA, BM25
+
+Experience:
+Worked as Staff Machine Learning Engineer at Yellow.ai
+Previously Staff Machine Learning Engineer at Niramai
+
+Education:
+Ph.D. from COEP Pune
+
+Semantic Similarity Score : 0.587
+BM25 Relevance Score      : 1.000
+Overall Hybrid Score      : 0.765
+```
+
+The complete ranked candidate list with detailed explanations is available in **`output.csv`**.
 
 ---
 
