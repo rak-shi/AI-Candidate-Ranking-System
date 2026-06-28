@@ -70,6 +70,22 @@ AI-Candidate-Ranking-System/
 └── processed/
     └── embeddings.pkl         # Generated candidate embeddings (not uploaded)
 ```
+---
+
+# 🏗️ System Architecture
+
+The following diagram illustrates the complete workflow of the AI Candidate Ranking System.
+
+<div align="center">
+
+<img src="<img width="1800" height="2000" alt="architecture" src="https://github.com/user-attachments/assets/057378a8-719f-4507-b007-7da94a763814" />
+
+
+</div>
+
+The system combines **BM25 lexical retrieval**, **Sentence Transformer semantic similarity**, **skill matching**, **experience scoring**, and **education scoring** to generate an explainable hybrid ranking for each candidate.
+
+---
 
 ## 🚀 Getting Started
 
