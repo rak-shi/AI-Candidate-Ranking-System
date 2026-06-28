@@ -193,4 +193,4 @@ The complete ranked candidate list with detailed explanations is available in **
 
 ## 📄 License
 
-This project was built for the *India Runs on Data & AI* challenge. Add a license of your choice (e.g. MIT) if you intend to open-source it more broadly.
+This project was built for the *India Runs on Data & AI* challenge. 
