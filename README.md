@@ -74,4 +74,84 @@ AI-Candidate-Ranking-System/
 │   └── embeddings.pkl           # Cached candidate embeddings (auto-generated)
 
 └── output.csv                   # Final ranked candidates with explanations
-<img width="227" height="386" alt="image" src="https://github.com/user-attachments/assets/152780ed-5760-43a7-a48f-e6429f7f8233" />
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rak-shi/AI-Candidate-Ranking-System.git
+cd AI-Candidate-Ranking-System
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Add your data
+
+Place your candidate dataset and job description inside the `data/` folder:
+
+- `data/candidates.jsonl` — one JSON object per line, each representing a candidate profile (skills, career history, education, etc.)
+- `data/job_description.docx` — the job description to rank candidates against (`.docx` or plain text supported)
+
+### 4. Run the ranking pipeline
+
+```bash
+python main.py
+```
+
+On first run, this will:
+1. Load all candidates and the job description.
+2. Generate and cache sentence embeddings for every candidate (`processed/embeddings.pkl`).
+3. Run the hybrid ranker (BM25 + embeddings + rule-based signals).
+4. Generate explanations for each ranked candidate.
+5. Save the top-ranked candidates to `output.csv`.
+
+Subsequent runs reuse the cached embeddings, so re-ranking against a new job description is fast — just delete `processed/embeddings.pkl` if your candidate data changes and needs re-embedding.
+
+### 5. Inspect a sample candidate (optional)
+
+```bash
+python check_dataset.py
+```
+
+---
+
+## 📦 Output
+
+`output.csv` contains the final ranked candidates:
+
+| rank | candidate_id | name | score | explanation |
+|---|---|---|---|---|
+| 1 | CAND_0088025 | Amit Arora | 0.7646 | Matched skills: ... \| Worked as ... \| Ph.D from ... \| Semantic similarity score: ... \| BM25 relevance score: ... \| Overall ranking score: ... |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- [`sentence-transformers`](https://www.sbert.net/) (`all-MiniLM-L6-v2`) — semantic embeddings
+- [`rank-bm25`](https://github.com/dorianbrown/rank_bm25) — lexical/keyword relevance
+- `scikit-learn` — score normalization & cosine similarity
+- `pandas` / `numpy` — data handling and scoring
+- `python-docx` — job description parsing
+- `tqdm`, `nltk`, `joblib` — supporting utilities
+
+---
+
+## 🔮 Possible Improvements
+
+- Configurable scoring weights via a config file instead of hard-coded constants.
+- Support for multiple job descriptions in a single run.
+- A simple web UI / API for uploading a JD and viewing ranked candidates interactively.
+- Unit tests for each ranker component.
+
+---
+
+## 📄 License
+
+This project was built for the *India Runs on Data & AI* challenge. Add a license of your choice (e.g. MIT) if you intend to open-source it more broadly.
