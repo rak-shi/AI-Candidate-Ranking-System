@@ -78,7 +78,7 @@ The following diagram illustrates the complete workflow of the AI Candidate Rank
 
 <div align="center">
 
-<img width="500" height="500" alt="architecture" src="https://github.com/user-attachments/assets/09f0c36d-b93b-4bb4-8536-a9eacd13142d" />
+<img width="650" height="650" alt="architecture" src="https://github.com/user-attachments/assets/09f0c36d-b93b-4bb4-8536-a9eacd13142d" />
 
 
 </div>
